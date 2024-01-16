@@ -1,0 +1,67 @@
+ Finish the following simple flex integer calculator. The user types in integers as their English names from one to ten.
+
+$ ./calc 
+one
+1
+$ ./calc 
+one + two
+3
+$ ./calc 
+one + two + three
+6
+$ ./calc 
+two * (three + four) * five
+70
+$ ./calc 
+two * (three - four) * five
+-10
+$ ./calc 
+eight % two
+0
+$ ./calc 
+eight / two
+4
+
+Have the generated function yylex() take the following actions for each symbol:
+Symbol	Action
+\n	return(0)
+space or \t	(Literally do nothing)
+one	return(1)
+two	return(2)
+three	return(3)
+four	return(4)
+five	return(5)
+six	return(6)
+seven	return(7)
+eight	return(8)
+nine	return(9)
+ten	return(10)
+"("	return((int)'(')
+")"	return((int)')')
+"+"	return((int)'+')
+"-"	return((int)'-')
+"*"	return((int)'*')
+"/"	return((int)'/')
+"%"	return((int)'%')
+
+%{
+
+/*--------------------------------------------------------------------------*
+*----									----*
+*----			englishCalc.lex					----*
+*----									----*
+*----	    This Flex program defines a program that defines an integer	----*
+*----	calculator, except that the numbers 1-10 are given as their	----*
+*----	names in English.						----*
+*----									----*
+*----	----	----	----	----	----	----	----	----	----*
+*----									----*
+*----	Version 1a		2023 January 23		Joseph Phillips	----*
+*----									----*
+*--------------------------------------------------------------------------*/
+
+/*
+ *	Compile with:
+ *	$ flex -o englishCalc.c englishCalc.lex
+ *	$ gcc englishCalc.c -o englishCalc -g
+ */

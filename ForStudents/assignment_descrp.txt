@@ -1,0 +1,58 @@
+Purpose:
+To go over:
+
+    The theory of bottom-up parsing
+
+Assignment:
+
+Consider a natural language called Nihonglish with the vocabulary of English but a different grammar.
+
+    The grammar of Nihonglish does not have have prepositions or prepositional phrases. Instead, it has postpositions and postpositional phrases.
+    The topic of the sentence (often times the subject), has its own post-position: "as for"
+    the verb comes at the end.
+
+The English sentence:
+
+I am going home.
+
+is rendered in Nihonglish as:
+
+I as for home to going.
+
+And the question
+
+Are you going to the store?
+
+is rendered in Nihonglish as:
+
+You as for store to going?
+
+or more succinctly:
+
+Store to going?
+
+Our subset of Nihonglish has these non-terminals:
+Non-Terminal	Meaning
+S	sentence
+PPL	post-positional phrase list
+PP	post-positional phrase
+T	topic
+L	location
+and these grammatical rules:
+
+    S -> PPL going period
+    S -> PPL going question_mark
+    PPL -> PP
+    PPL -> PP PP
+    PP -> T as for
+    T -> i (The English 1st person pronoun "I")
+    T -> you
+    PP -> L to
+    L -> home
+    L -> store
+
+You must:
+
+    (30 Points) Make the table for the bottom-up parser for the grammar above. (S is the starting symbol.)
+        Compute the states
+        Compute the parse table

@@ -1,0 +1,29 @@
+Purpose:
+To go over:
+
+    Recursive descent parsers
+
+Overview:
+
+Finish my C++ program that implements a recursive-descent parser of a simple language of studying and passing a class in English. The language can handle:
+
+$ ./studentLang 
+Expression to compute: Read the book. Take the final.
+Congratulations, you pass the class!
+$ ./studentLang 
+Expression to compute: Write the homework. Write the paper. Take the final.
+Congratulations, you pass the class!
+$ ./studentLang 
+Expression to compute: Take the final.
+Congratulations, you pass the class!
+
+You can see the allowed paragraphs from the grammar, but all paragraphs must end with Take the final.
+
+$ ./studentLang 
+Expression to compute: Write the paper.
+Expected "read", "write" or "take".
+Sorry, you failed the course!
+$ ./studentLang 
+Expression to compute: Take the final. final
+Expected end after "Take the final."
+Sorry, you failed the course!
